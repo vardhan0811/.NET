@@ -12,3 +12,4 @@ C:\Users\CyberBot\Desktop\.NET\MyConsoleApp\obj\Debug\net10.0\refint\MyConsoleAp
 C:\Users\CyberBot\Desktop\.NET\MyConsoleApp\obj\Debug\net10.0\MyConsoleApp.pdb
 C:\Users\CyberBot\Desktop\.NET\MyConsoleApp\obj\Debug\net10.0\MyConsoleApp.genruntimeconfig.cache
 C:\Users\CyberBot\Desktop\.NET\MyConsoleApp\obj\Debug\net10.0\ref\MyConsoleApp.dll
+C:\Users\CyberBot\Desktop\.NET\MyConsoleApp\obj\Debug\net10.0\MyConsoleApp.sourcelink.json

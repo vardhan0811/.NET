@@ -1,14 +1,11 @@
 using System;
-class Day1
+public class Day1
 {
-    static void Main(string[] args)
+    // Method to find prime numbers up to a given limit
+    public static void Run(string[] args)
     {
         Console.WriteLine("Enter a number:");
-        if (!int.TryParse(Console.ReadLine(), out int n))
-        {
-            Console.WriteLine("Invalid input.");
-            return;
-        }
+        int n = Convert.ToInt32(Console.ReadLine());
         bool[] isPrime = new bool[n + 1];
         for (int i = 2; i <= n; i++)
             isPrime[i] = true;
