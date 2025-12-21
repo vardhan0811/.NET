@@ -6,7 +6,8 @@ class Program
     {
         // Day1.Run(args);
         // Day2.Run(args);
-        Day3.Run(args);
+        // Day3.Run(args);
+         Day4.Run(args);
     }
 }
 
