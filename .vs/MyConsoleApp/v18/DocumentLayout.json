@@ -18,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Day4.cs",
-              "DocumentMoniker": "C:\\Users\\CyberBot\\Desktop\\.NET\\MyConsoleApp\\Day4.cs",
-              "RelativeDocumentMoniker": "Day4.cs",
-              "ToolTip": "C:\\Users\\CyberBot\\Desktop\\.NET\\MyConsoleApp\\Day4.cs",
-              "RelativeToolTip": "Day4.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T07:35:05.212Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -43,7 +30,29 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-21T07:23:06.896Z"
+              "WhenOpened": "2025-12-21T07:23:06.896Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Day4.cs",
+              "DocumentMoniker": "C:\\Users\\CyberBot\\Desktop\\.NET\\MyConsoleApp\\Day4.cs",
+              "RelativeDocumentMoniker": "Day4.cs",
+              "ToolTip": "C:\\Users\\CyberBot\\Desktop\\.NET\\MyConsoleApp\\Day4.cs",
+              "RelativeToolTip": "Day4.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-21T07:35:05.212Z",
+              "EditorCaption": ""
             }
           ]
         }
