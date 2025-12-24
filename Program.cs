@@ -8,7 +8,8 @@ class Program
         // Day2ConditionalStatements.Run(args);
         // Day3ClassesObjectsInheritance.Run(args);
         // Day4Encapsulation.Run(args);
-        Day5AbstractClasses.Run(args);
+        // Day5AbstractClasses.Run(args);
+        Day6Interfaces.Run();
     }
 }
 
