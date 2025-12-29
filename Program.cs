@@ -9,7 +9,9 @@ class Program
         // Day3ClassesObjectsInheritance.Run(args);
         // Day4Encapsulation.Run(args);
         // Day5AbstractClasses.Run(args);
-        Day6Interfaces.Run();
+        // Day6Interfaces.Run();
+        // Day7Scenario.Run(args);
+        Day9Indexers.Run();
     }
 }
 
