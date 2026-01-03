@@ -106,7 +106,7 @@ public class Day9Indexers
     // Question 2: Inheritance – Employee Payroll System
     public class Employee
     {
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public virtual decimal CalculateSalary() => 0;
     }
 
@@ -156,7 +156,7 @@ public class Day9Indexers
     // Question 4: Abstraction – Vehicle Rental System
     public abstract class Vehicle
     {
-        public string Model { get; set; }
+        public string? Model { get; set; }
         public abstract decimal CalculateRentalPrice(int days);
     }
 
@@ -227,7 +227,7 @@ public class Day9Indexers
     // Question 7: Method Overriding – Insurance Premium Calculation
     public abstract class Insurance
     {
-        public string PolicyHolder { get; set; }
+        public string? PolicyHolder { get; set; }
         public abstract decimal CalculatePremium();
     }
 
@@ -250,7 +250,7 @@ public class Day9Indexers
     // Explanation: Composition means an Order "has-a" collection of Products, not "is-a" Product.
     public class Product
     {
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public decimal Price { get; set; }
     }
 

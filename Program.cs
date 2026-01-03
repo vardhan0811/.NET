@@ -11,7 +11,9 @@ class Program
         // Day5AbstractClasses.Run(args);
         // Day6Interfaces.Run();
         // Day7Scenario.Run(args);
-        Day9Indexers.Run();
+        // Day9Indexers.Run();
+        // Day10RegexMethods.Run();
+        Day11LibraryManagement.Run();
     }
 }
 
