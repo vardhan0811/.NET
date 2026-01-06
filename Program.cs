@@ -13,7 +13,8 @@ class Program
         // Day7Scenario.Run(args);
         // Day9Indexers.Run();
         // Day10RegexMethods.Run();
-        Day11LibraryManagement.Run();
+        // Day11LibraryManagement.Run();
+        Day12XMLConverter.Run();
     }
 }
 
