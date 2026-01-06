@@ -3,7 +3,7 @@ using System;
 /// <summary>
 /// Demonstrates abstract classes, interfaces, and implementation in C#.
 /// </summary>
-public class Day5AbstractClasses
+public class Day05AbstractClasses
 {
     /// <summary>
     /// Abstract base class for payments.

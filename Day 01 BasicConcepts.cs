@@ -3,7 +3,7 @@ using System;
 /// <summary>
 /// Demonstrates basic concepts: finding prime numbers up to a given limit.
 /// </summary>
-public class Day1BasicConcepts
+public class Day01BasicConcepts
 {
     /// <summary>
     /// Finds and prints all prime numbers up to a user-specified limit.

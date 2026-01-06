@@ -5,7 +5,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Demonstrates interfaces, implementation, and organization structure in C#.
 /// </summary>
-public class Day6Interfaces
+public class Day06Interfaces
 {
     #region Interfaces
     /// <summary>

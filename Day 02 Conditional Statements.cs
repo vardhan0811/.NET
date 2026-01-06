@@ -1,5 +1,5 @@
 using System; // Import System namespace
-public class Day2ConditionalStatements // Main class for Day 2
+public class Day02ConditionalStatements // Main class for Day 2
 {
     public static void Run(string[] args) // Main method to run conditional statements demo
     {

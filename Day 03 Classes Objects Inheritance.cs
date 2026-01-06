@@ -3,7 +3,7 @@ using System;
 /// <summary>
 /// Demonstrates classes, objects, and inheritance concepts in C#.
 /// </summary>
-public class Day3ClassesObjectsInheritance
+public class Day03ClassesObjectsInheritance
 {
     /// <summary>
     /// Represents a generic person with a name and age.

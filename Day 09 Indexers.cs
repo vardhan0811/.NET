@@ -66,9 +66,9 @@ public static class GeneralUses
 }
 
 /// <summary>
-/// Main class for Day 9 indexers and OOP exercises.
+/// Main class for Day 09 indexers and OOP exercises.
 /// </summary>
-public class Day9Indexers
+public class Day09Indexers
 {
     /// <summary>
     /// Runs the student and indexer demonstration.

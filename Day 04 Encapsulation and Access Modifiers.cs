@@ -3,7 +3,7 @@ using System;
     /// <summary>
     /// Demonstrates encapsulation and access modifiers in C#.
     /// </summary>
-    public class Day4Encapsulation
+    public class Day04Encapsulation
     {
         #region Fields
         /// <summary>
@@ -28,7 +28,7 @@ using System;
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public Day4Encapsulation()
+        public Day04Encapsulation()
         {
         }
 
@@ -36,7 +36,7 @@ using System;
         /// Constructor with ID.
         /// </summary>
         /// <param name="id">The ID to set.</param>
-        public Day4Encapsulation(int id)
+        public Day04Encapsulation(int id)
         {
             this.Id = id;
         }
@@ -46,7 +46,7 @@ using System;
         /// </summary>
         /// <param name="id">The ID to set.</param>
         /// <param name="name">The name to set.</param>
-        public Day4Encapsulation(int id, string? name) : this(id)
+        public Day04Encapsulation(int id, string? name) : this(id)
         {
             // Validate name does not contain "Idiot"
             if (name != null && name.ToLower().Contains("idiot"))
@@ -64,7 +64,7 @@ using System;
         /// <param name="id">The ID to set.</param>
         /// <param name="name">The name to set.</param>
         /// <param name="description">The description to set.</param>
-        public Day4Encapsulation(int id, string? name, string? description) : this(id, name)
+        public Day04Encapsulation(int id, string? name, string? description) : this(id, name)
         {
             // Validate name does not contain "Idiot"
             if (name != null && name.ToLower().Contains("idiot"))
@@ -85,7 +85,7 @@ using System;
         /// </summary>
         /// <param name="a">First integer.</param>
         /// <param name="b">Second integer.</param>
-        public Day4Encapsulation(int a, int b)
+        public Day04Encapsulation(int a, int b)
         {
             AdditionResult = a + b;
             Console.WriteLine($"Addition of {a} + {b} == {AdditionResult}");
@@ -102,10 +102,10 @@ using System;
             try
             {
                 // Create object with valid name
-                Day4Encapsulation day4b = new Day4Encapsulation(2, "Sample Name");
+                Day04Encapsulation day4b = new Day04Encapsulation(2, "Sample Name");
                 Console.WriteLine($"Day4b - Id: {day4b.Id}, Name: {day4b.Name}, Description: {day4b.Description}");
                 // This will throw an exception
-                Day4Encapsulation day4c = new Day4Encapsulation(3, "Idiot Example", "This is a description.");
+                Day04Encapsulation day4c = new Day04Encapsulation(3, "Idiot Example", "This is a description.");
                 Console.WriteLine($"Day4c - Id: {day4c.Id}, Name: {day4c.Name}, Description: {day4c.Description}");
             }
             catch (ArgumentException ex)
@@ -119,7 +119,7 @@ using System;
             int a = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter b: ");
             int b = Convert.ToInt32(Console.ReadLine());
-            Day4Encapsulation add = new Day4Encapsulation(a, b);
+            Day04Encapsulation add = new Day04Encapsulation(a, b);
 
             add.ID = 100; // This will invoke the setter
             string? res = add.EmployeeDetails();

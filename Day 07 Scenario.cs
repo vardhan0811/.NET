@@ -254,7 +254,7 @@ public class Programs
 /// <summary>
 /// Main scenario class for Day 7 exercises.
 /// </summary>
-public class Day7Scenario
+public class Day07Scenario
 {
     /// <summary>
     /// Runs the robot hazard and string processing scenarios.
