@@ -1,19 +1,32 @@
 using System;
 
-// Custom exception for robot safety violations
+/// <summary>
+/// Custom exception for robot safety violations.
+/// </summary>
 public class RobotSafetyException : Exception
 {
-    // Constructor prints the error message immediately
+    /// <summary>
+    /// Constructor prints the error message immediately.
+    /// </summary>
+    /// <param name="message">Error message.</param>
     public RobotSafetyException(string message) : base(message)
     {
         Console.WriteLine(message);
     }
 }
 
-// Class responsible for auditing robot hazard risks
+/// <summary>
+/// Class responsible for auditing robot hazard risks.
+/// </summary>
 public class RobotHazardAuditor
 {
-    // Calculates the hazard risk based on arm precision, worker density, and machinery state
+    /// <summary>
+    /// Calculates the hazard risk based on arm precision, worker density, and machinery state.
+    /// </summary>
+    /// <param name="armPrecision">Precision of the robot arm (0.0-1.0).</param>
+    /// <param name="workerDensity">Number of workers in the area (1-20).</param>
+    /// <param name="machineryState">State of the machinery (Worn/Faulty/Critical).</param>
+    /// <returns>Hazard risk score.</returns>
     public double CalculateHazardRisk(double armPrecision, int workerDensity, string machineryState)
     {
         // Validate arm precision is within the allowed range
@@ -42,8 +55,16 @@ public class RobotHazardAuditor
     }
 }
 
+/// <summary>
+/// Provides string processing functionality for cleansing and inverting input.
+/// </summary>
 public class CleanseAndInvert
 {
+    /// <summary>
+    /// Processes the input string by filtering, reversing, and formatting.
+    /// </summary>
+    /// <param name="input">Input string.</param>
+    /// <returns>Processed string or empty if invalid.</returns>
     public string ProcessInput(string input)
     {
         if (string.IsNullOrEmpty(input) || input.Length < 6)
@@ -61,6 +82,7 @@ public class CleanseAndInvert
         var filtered = new List<char>();
         foreach (char c in lower)
         {
+            // Keep only characters with odd ASCII codes
             if (((int)c) % 2 != 0)
                 filtered.Add(c);
         }
@@ -68,6 +90,7 @@ public class CleanseAndInvert
         if (filtered.Count == 0)
             return string.Empty;
 
+        // Reverse the filtered characters
         filtered.Reverse();
 
         // Convert even-indexed chars to uppercase
@@ -77,29 +100,61 @@ public class CleanseAndInvert
                 filtered[i] = char.ToUpper(filtered[i]);
         }
 
+        // Return the processed string
         return new string(filtered.ToArray());
     }
 }
 
+
+/// <summary>
+/// Stores creator statistics and engagement board.
+/// </summary>
 public class CreatorStats
 {
+    /// <summary>
+    /// Gets or sets the creator's name.
+    /// </summary>
     public string CreatorName { get; set; }
+    /// <summary>
+    /// Gets or sets the weekly likes for the creator.
+    /// </summary>
     public double[] WeeklyLikes { get; set; }
+    /// <summary>
+    /// Initializes a new creator stats record.
+    /// </summary>
+    /// <param name="creatorName">Creator name.</param>
+    /// <param name="weeklyLikes">Weekly likes array.</param>
     public CreatorStats(string creatorName, double[] weeklyLikes)
     {
         CreatorName = creatorName;
         WeeklyLikes = weeklyLikes;
     }
+    /// <summary>
+    /// Static engagement board for all creators.
+    /// </summary>
     public static List<CreatorStats> EngagementBoard { get; } = new List<CreatorStats>();
 }
 
+/// <summary>
+/// Provides program logic for creator registration and statistics.
+/// </summary>
 public class Programs
 {
+    /// <summary>
+    /// Registers a creator record to the engagement board.
+    /// </summary>
+    /// <param name="record">Creator record.</param>
     public void RegisterCreator(CreatorStats record)
     {
         CreatorStats.EngagementBoard.Add(record);
     }
 
+    /// <summary>
+    /// Gets the count of top posts for each creator above a like threshold.
+    /// </summary>
+    /// <param name="records">List of creator records.</param>
+    /// <param name="likeThreshold">Threshold for likes.</param>
+    /// <returns>Dictionary of creator names and top post counts.</returns>
     public Dictionary<string, int> GetTopPostCounts(List<CreatorStats> records, double likeThreshold)
     {
         var result = new Dictionary<string, int>();
@@ -117,6 +172,10 @@ public class Programs
         return result;
     }
 
+    /// <summary>
+    /// Calculates the average weekly likes across all creators.
+    /// </summary>
+    /// <returns>Average weekly likes.</returns>
     public double CalculateAverageLikes()
     {
         int totalWeeks = 0;
@@ -132,6 +191,10 @@ public class Programs
         return Math.Round(totalLikes / totalWeeks);
     }
 
+    /// <summary>
+    /// Runs the creator statistics program.
+    /// </summary>
+    /// <param name="args">Command-line arguments (not used).</param>
     public static void Run(string[] args)
     {
         Programs p = new Programs();
@@ -188,10 +251,15 @@ public class Programs
     }
 }
 
-
-
+/// <summary>
+/// Main scenario class for Day 7 exercises.
+/// </summary>
 public class Day7Scenario
 {
+    /// <summary>
+    /// Runs the robot hazard and string processing scenarios.
+    /// </summary>
+    /// <param name="args">Command-line arguments (not used).</param>
     public static void Run(string[] args)
     {
         try
@@ -224,7 +292,7 @@ public class Day7Scenario
             // Silently ignore any other unexpected errors
         }
 
-        
+        // String processing scenario
         Console.WriteLine("Enter the word");
         string? input = Console.ReadLine();
 
@@ -235,7 +303,5 @@ public class Day7Scenario
             Console.WriteLine("Invalid Input");
         else
             Console.WriteLine($"The generated key is - {result}");
-
-        
     }
 }
