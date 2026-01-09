@@ -1,5 +1,8 @@
 using System;
 
+namespace Day09IndexersNamespace
+{
+
 /// <summary>
 /// Demonstrates indexers, encapsulation, inheritance, interfaces, and OOP principles in C#.
 /// </summary>
@@ -663,4 +666,5 @@ public class Day09Indexers
             Console.WriteLine("Order processed successfully.");
         }
     }
+}
 }
