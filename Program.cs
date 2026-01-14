@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-namespace Day18LINQ
+namespace Day19FileHandling
 {
     class Program
     {
@@ -23,7 +23,10 @@ namespace Day18LINQ
             // Day15MeetingQuestions.Run(args);
             // Day16CallbackAndCustomExceptions.Run();
             // Day17WeeklyExams;
-            Day18LINQ.Run();
+            // Day18LINQ.Run();
+            // Day19Generics.Run(args);
+            // Day19Threading.Run(args);
+            Day19FileHandling.Run(args);
         }
     }
 }
