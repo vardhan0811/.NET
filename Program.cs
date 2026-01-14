@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-namespace Day16CallbackAndCustomExceptions
+namespace Day18LINQ
 {
     class Program
     {
@@ -21,7 +21,9 @@ namespace Day16CallbackAndCustomExceptions
             // Day14Reflections.Run();
             // Day15Delegates.Run(args);
             // Day15MeetingQuestions.Run(args);
-            Day16CallbackAndCustomExceptions.Run();
+            // Day16CallbackAndCustomExceptions.Run();
+            // Day17WeeklyExams;
+            Day18LINQ.Run();
         }
     }
 }
