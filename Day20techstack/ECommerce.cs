@@ -2,6 +2,9 @@ using System;
 
 namespace Day20techstack
 {
+    /// <summary>
+    /// Custom exception thrown when the wallet balance is insufficient for a purchase.
+    /// </summary>
     public class InsufficientWalletBalanceException : Exception
     {
         public InsufficientWalletBalanceException(string message) : base(message)
@@ -9,6 +12,9 @@ namespace Day20techstack
         }
     }
 
+    /// <summary>
+    /// Represents a user's e-commerce shop account with wallet and purchase details.
+    /// </summary>
     public class ECommerceShop
     {
         public string? UserName { get; set; }
@@ -16,16 +22,28 @@ namespace Day20techstack
         public double TotalPurchaseAmount { get; set; }
     }
 
+    /// <summary>
+    /// Handles e-commerce payment logic and wallet balance validation.
+    /// </summary>
     public class ECommerce
     {
+        /// <summary>
+        /// Makes a payment if the wallet balance is sufficient, otherwise throws an exception.
+        /// </summary>
+        /// <param name="name">User's name</param>
+        /// <param name="balance">Current wallet balance</param>
+        /// <param name="amount">Purchase amount</param>
+        /// <returns>ECommerceShop object with updated balance and purchase info</returns>
         public static ECommerceShop MakePayment(string name, double balance, double amount)
         {
+            // Check if the wallet balance is enough for the purchase
             if (balance < amount)
             {
                 throw new InsufficientWalletBalanceException(
                     "Insufficient balance in your digital wallet");
             }
 
+            // Create and return a new ECommerceShop object with updated balance
             ECommerceShop shop = new ECommerceShop
             {
                 UserName = name,
@@ -36,6 +54,9 @@ namespace Day20techstack
             return shop;
         }
 
+        /// <summary>
+        /// Runs the payment process by taking user input and validating the transaction.
+        /// </summary>
         static void Run(string[] args)
         {
             try
@@ -60,11 +81,13 @@ namespace Day20techstack
                 }
                 double amount = double.Parse(amountInput);
 
+                // Attempt to make the payment
                 ECommerceShop result = MakePayment(name, balance, amount);
                 Console.WriteLine("Payment successful");
             }
             catch (InsufficientWalletBalanceException ex)
             {
+                // Handle custom exception for insufficient balance
                 Console.WriteLine(ex.Message);
             }
         }

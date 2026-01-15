@@ -3,8 +3,14 @@ using System.Collections;
 
 namespace Day20techstack
 {
+    /// <summary>
+    /// Provides methods to manage yoga members, calculate BMI, and determine yoga fees.
+    /// </summary>
     public class Yoga
     {
+        /// <summary>
+        /// Represents a member of the meditation center.
+        /// </summary>
         public class MeditationCenter
         {
             public int MemberID { get; set; }
@@ -15,7 +21,14 @@ namespace Day20techstack
             public double BMI { get; set; }
         }
 
+        /// <summary>
+        /// Stores the list of yoga members.
+        /// </summary>
         public static ArrayList MemberList = new ArrayList();
+
+        /// <summary>
+        /// Adds a new yoga member to the MemberList.
+        /// </summary>
         public static void AddYogaMember(int memberId, int age, double weight, double height, string goal)
         {
             MeditationCenter member = new MeditationCenter
@@ -27,9 +40,14 @@ namespace Day20techstack
                 Goal = goal,
                 BMI = weight / (height * height)
             };
-            MemberList.Add(member);
+            MemberList.Add(member); // Add the member to the list
         }
 
+        /// <summary>
+        /// Calculates the BMI for a given member ID and updates the member's BMI.
+        /// </summary>
+        /// <param name="memberId">Member ID to calculate BMI for</param>
+        /// <returns>BMI value or -1 if member not found</returns>
         public static double CalculateBMI(int memberId)
         {
             foreach (MeditationCenter member in MemberList)
@@ -45,12 +63,18 @@ namespace Day20techstack
             return -1; // Member not found
         }
 
+        /// <summary>
+        /// Calculates the yoga fee for a given member ID based on BMI and goal.
+        /// </summary>
+        /// <param name="memberId">Member ID to calculate fee for</param>
+        /// <returns>Fee amount, 0 if not applicable, or -1 if member not found</returns>
         public static int CalculateYogaFee(int memberId)
         {
             foreach (MeditationCenter member in MemberList)
             {
                 if (member.MemberID == memberId)
                 {
+                    // Fee logic for Weight Loss goal
                     if (!string.IsNullOrEmpty(member.Goal) && member.Goal.Equals("Weight Loss", StringComparison.OrdinalIgnoreCase))
                     {
                         if (member.BMI >= 25 && member.BMI < 30) return 2000;
@@ -58,6 +82,7 @@ namespace Day20techstack
                         if (member.BMI >= 35) return 3000;
                         return 0;
                     }
+                    // Fee logic for Weight Gain goal
                     else if (!string.IsNullOrEmpty(member.Goal) && member.Goal.Equals("Weight Gain", StringComparison.OrdinalIgnoreCase))
                     {
                         return 2500;
@@ -67,11 +92,15 @@ namespace Day20techstack
             return -1; // Member not found
         }
 
+        /// <summary>
+        /// Runs the yoga member management process by taking user input and displaying results.
+        /// </summary>
         public static void Run()
         {
             Console.WriteLine("Enter number of Yoga Members to add:");
             int count = int.Parse(Console.ReadLine() ?? "0");
 
+            // Input details for each yoga member
             for(int i = 0; i < count; i++)
             {
                 Console.WriteLine($"Enter details for Yoga Member {i + 1}:");
@@ -89,6 +118,7 @@ namespace Day20techstack
                 AddYogaMember(memberId, age, weight, height, goal);
             }
 
+            // Calculate and display BMI and fee for a specific member
             Console.WriteLine("Enter Member ID to calculate BMI and Yoga Fee:");
             int inputMemberId = int.Parse(Console.ReadLine() ?? "0");
 
