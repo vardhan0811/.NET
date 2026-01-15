@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-namespace Day19FileHandling
+namespace Day20techstack
 {
     class Program
     {
@@ -26,7 +26,14 @@ namespace Day19FileHandling
             // Day18LINQ.Run();
             // Day19Generics.Run(args);
             // Day19Threading.Run(args);
-            Day19FileHandling.Run(args);
+            // Day19FileHandling.Run(args);
+            // FindItems.Run();
+            // MovieStock.Run();
+            // Calculate.Run();
+            // Yoga.Run();
+            // Authentication.Run();
+            // Estimation.Run();
+            MobileNumber.Run();
         }
     }
 }
