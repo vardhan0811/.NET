@@ -7,8 +7,8 @@ namespace Day32
     // Class to store creator statistics
     public class CreatorStats
     {
-        public string CreatorName { get; set; } // Name of the creator
-        public double[] WeeklyLikes { get; set; } // Array to store weekly likes
+        public string? CreatorName { get; set; } // Name of the creator
+        public double[]? WeeklyLikes { get; set; } // Array to store weekly likes
         public static List<CreatorStats> EngagementBoard { get; } = new List<CreatorStats>(); // Static list to hold all creator records
     }
 
@@ -27,8 +27,8 @@ namespace Day32
             foreach (var creator in records)
             {
                 // Count the number of weeks where likes are above or equal to the threshold
-                int count = creator.WeeklyLikes.Count(like => like >= likeThreshold);
-                if (count > 0)
+                int count = (creator.WeeklyLikes != null) ? creator.WeeklyLikes.Count(like => like >= likeThreshold) : 0;
+                if (count > 0 && !string.IsNullOrEmpty(creator.CreatorName))
                 {
                     result[creator.CreatorName] = count;
                 }
@@ -39,7 +39,10 @@ namespace Day32
         // Calculates the average likes across all creators and weeks
         public double CalculateAverageLikes()
         {
-            var allLikes = CreatorStats.EngagementBoard.SelectMany(c => c.WeeklyLikes).ToList();
+            var allLikes = CreatorStats.EngagementBoard
+                .Where(c => c.WeeklyLikes != null)
+                .SelectMany(c => c.WeeklyLikes!)
+                .ToList();
             if (allLikes.Count == 0) return 0;
             return Math.Round(allLikes.Average());
         }
@@ -56,17 +59,17 @@ namespace Day32
                 Console.WriteLine("3. Calculate Average Likes");
                 Console.WriteLine("4. Exit");
                 Console.WriteLine("Enter your choice:");
-                string choice = Console.ReadLine();
+                string choice = Console.ReadLine() ?? string.Empty;
                 if (choice == "1")
                 {
                     // Register a new creator
                     Console.WriteLine("Enter Creator Name:");
-                    string name = Console.ReadLine();
+                    string name = Console.ReadLine() ?? string.Empty;
                     double[] likes = new double[4];
                     Console.WriteLine("Enter weekly likes (Week 1 to 4):");
                     for (int i = 0; i < 4; i++)
                     {
-                        likes[i] = double.Parse(Console.ReadLine());
+                        likes[i] = double.Parse(Console.ReadLine() ?? "0");
                     }
                     CreatorStats record = new CreatorStats { CreatorName = name, WeeklyLikes = likes };
                     p.RegisterCreator(record);
@@ -76,7 +79,7 @@ namespace Day32
                 {
                     // Show creators with posts above the like threshold
                     Console.WriteLine("Enter like threshold:");
-                    double threshold = double.Parse(Console.ReadLine());
+                    double threshold = double.Parse(Console.ReadLine() ?? "0");
                     var result = p.GetTopPostCounts(CreatorStats.EngagementBoard, threshold);
                     if (result.Count == 0)
                     {

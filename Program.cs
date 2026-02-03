@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-namespace PettyCashManager
+namespace Day32
 {
     class Program
     {
@@ -35,6 +35,11 @@ namespace PettyCashManager
             // Estimation.Run();
             // MobileNumber.Run();
             // MovieLibrary.Run();
+            // Predicates.Run();
+            // Action.Run();
+            // Day31Meeting.Run();
+            
+
         }
     }
 }

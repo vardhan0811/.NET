@@ -162,13 +162,20 @@ class RestaurantM
         try
         {
             Console.Write("Enter item name: ");
-            string name = Console.ReadLine();
+            string? nameInput = Console.ReadLine();
+            string name = nameInput ?? string.Empty;
             Console.Write("Enter category (Appetizer/Main Course/Dessert): ");
-            string category = Console.ReadLine();
+            string? categoryInput = Console.ReadLine();
+            string category = categoryInput ?? string.Empty;
             Console.Write("Enter price: ");
-            double price = double.Parse(Console.ReadLine());
+            string? priceInput = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(priceInput) || !double.TryParse(priceInput, out double price))
+            {
+                Console.WriteLine("Invalid price entered.");
+                return;
+            }
             Console.Write("Is vegetarian? (y/n): ");
-            bool isVeg = Console.ReadLine().Trim().ToLower() == "y";
+            bool isVeg = (Console.ReadLine()?.Trim().ToLower() == "y");
             manager.AddMenuItem(name, category, price, isVeg);
             Console.WriteLine("Menu item added successfully.");
         }

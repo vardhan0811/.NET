@@ -107,16 +107,16 @@ class ECommerce
             Console.WriteLine("6. List All Products");
             Console.WriteLine("0. Exit");
             Console.Write("Select an option: ");
-            string input = Console.ReadLine();
+            string input = Console.ReadLine() ?? string.Empty;
 
             switch (input)
             {
                 case "1":
                     // Add a new product
                     Console.Write("Product Name: ");
-                    string name = Console.ReadLine();
+                    string name = Console.ReadLine() ?? string.Empty;
                     Console.Write("Category: ");
-                    string category = Console.ReadLine();
+                    string category = Console.ReadLine() ?? string.Empty;
                     Console.Write("Price: ");
                     double price = double.TryParse(Console.ReadLine(), out price) ? price : 0;
                     Console.Write("Stock Quantity: ");
@@ -139,7 +139,7 @@ class ECommerce
                 case "3":
                     // Update stock after a sale
                     Console.Write("Enter Product Code: ");
-                    string code = Console.ReadLine();
+                    string code = Console.ReadLine() ?? string.Empty;
                     Console.Write("Quantity to Sell: ");
                     int qty = int.TryParse(Console.ReadLine(), out qty) ? qty : 0;
                     bool updated = manager.UpdateStock(code, qty);

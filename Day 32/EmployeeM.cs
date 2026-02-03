@@ -90,16 +90,16 @@ public class EmployeeM
             Console.WriteLine("5. List Employees Joined After Date");
             Console.WriteLine("6. Exit");
             Console.Write("Select an option: ");
-            string choice = Console.ReadLine();
+            string choice = Console.ReadLine() ?? string.Empty;
 
             switch (choice)
             {
                 case "1":
                     // Add a new employee
                     Console.Write("Enter Name: ");
-                    string name = Console.ReadLine();
+                    string name = Console.ReadLine() ?? string.Empty;
                     Console.Write("Enter Department: ");
-                    string dept = Console.ReadLine();
+                    string dept = Console.ReadLine() ?? string.Empty;
                     Console.Write("Enter Salary: ");
                     double salary;
                     while (!double.TryParse(Console.ReadLine(), out salary))
@@ -137,7 +137,7 @@ public class EmployeeM
                 case "4":
                     // Calculate total salary for a department
                     Console.Write("Enter Department: ");
-                    string dep = Console.ReadLine();
+                    string dep = Console.ReadLine() ?? string.Empty;
                     double totalSalary = hr.CalculateDepartmentSalary(dep);
                     Console.WriteLine($"Total Salary for {dep}: {totalSalary:C}");
                     break;

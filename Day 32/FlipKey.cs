@@ -51,7 +51,7 @@ public class Flipkey
     public static void Run()
     {
         Console.WriteLine("Enter the word");
-        string input = Console.ReadLine();
+        string input = Console.ReadLine() ?? string.Empty;
 
         Flipkey fk = new Flipkey();
         string key = fk.CleanseAndInvert(input);

@@ -152,7 +152,7 @@ namespace Day32
                 Console.WriteLine("Invalid year.");
                 return;
             }
-            library.AddBook(title, author, genre, year);
+            library.AddBook(title ?? string.Empty, author ?? string.Empty, genre ?? string.Empty, year);
             Console.WriteLine("Book added.");
         }
 
@@ -174,7 +174,7 @@ namespace Day32
         {
             Console.Write("Enter author name: ");
             var author = Console.ReadLine();
-            var books = library.GetBooksByAuthor(author);
+            var books = library.GetBooksByAuthor(author ?? string.Empty);
             if (books.Count == 0)
             {
                 Console.WriteLine("No books found for this author.");

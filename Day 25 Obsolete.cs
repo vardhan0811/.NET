@@ -18,7 +18,7 @@ namespace Day25Obsolete
     }
     public class AttributeMain
     {
-        public static void Main(string[] args)
+        public static void Run(string[] args)
         {
             Calculate calc = new Calculate();
             calc.Add(3, 4);

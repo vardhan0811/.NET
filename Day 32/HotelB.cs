@@ -93,7 +93,12 @@ class HotelB
             Console.WriteLine("4. Show all rooms");
             Console.WriteLine("0. Exit");
             Console.Write("Choose an option: ");
-            string input = Console.ReadLine();
+            string? input = Console.ReadLine();
+            if (input == null)
+            {
+                Console.WriteLine("Input cannot be null.");
+                continue;
+            }
 
             switch (input)
             {

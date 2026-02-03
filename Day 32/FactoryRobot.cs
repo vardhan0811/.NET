@@ -51,15 +51,24 @@ namespace Day32
             {
                 // Prompt user for arm precision input
                 Console.WriteLine("Enter Arm Precision (0.0 - 1.0):");
-                double armPrecision = double.Parse(Console.ReadLine());
+                string? armPrecisionInput = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(armPrecisionInput))
+                    throw new RobotSafetyException("Error: Arm precision input cannot be empty.");
+                double armPrecision = double.Parse(armPrecisionInput);
 
                 // Prompt user for worker density input
                 Console.WriteLine("Enter Worker Density (1 - 20):");
-                int workerDensity = int.Parse(Console.ReadLine());
+                string? workerDensityInput = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(workerDensityInput))
+                    throw new RobotSafetyException("Error: Worker density input cannot be empty.");
+                int workerDensity = int.Parse(workerDensityInput);
 
                 // Prompt user for machinery state input
                 Console.WriteLine("Enter Machinery State (Worn/Faulty/Critical):");
-                string machineryState = Console.ReadLine();
+                string? machineryStateInput = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(machineryStateInput))
+                    throw new RobotSafetyException("Error: Machinery state input cannot be empty.");
+                string machineryState = machineryStateInput;
 
                 // Create an auditor and calculate the risk
                 RobotHazardAuditor auditor = new RobotHazardAuditor();
