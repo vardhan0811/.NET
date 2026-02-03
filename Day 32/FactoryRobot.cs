@@ -77,13 +77,10 @@ namespace Day32
                 // Output the calculated risk score
                 Console.WriteLine($"Robot Hazard Risk Score: {risk}");
             }
-            catch (RobotSafetyException)
+            catch (RobotSafetyException ex)
             {
                 // Exception message already printed in exception constructor
-            }
-            catch (Exception)
-            {
-                // For any unexpected parsing errors, do nothing as per requirements
+                Console.WriteLine($"Robot Safety Exception: {ex.Message}");
             }
         }
     }
