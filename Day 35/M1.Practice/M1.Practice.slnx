@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="M1.Practice.Application/M1.Practice.Application.csproj" />
+  <Project Path="M1.Practice.Domain/M1.Practice.Domain.csproj" />
+  <Project Path="M1.Practice.Tests/M1.Practice.Tests.csproj" />
+</Solution>
