@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-namespace Day39
+namespace Day42
 {
     class Program
     {
@@ -38,7 +38,6 @@ namespace Day39
             // Predicates.Run();
             // Action.Run();
             // Day31Meeting.Run();
-            Reflections.Run();
         }
     }
 }
