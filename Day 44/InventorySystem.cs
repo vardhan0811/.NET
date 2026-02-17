@@ -5,7 +5,7 @@ using System.Linq;
 public interface IProduct
 {
     int Id { get; }
-    string Name { get; }
+    string? Name { get; }
     decimal Price { get; }
     Category Category { get; }
 }
@@ -61,11 +61,11 @@ public class ProductRepository<T> where T : class, IProduct
 public class ElectronicProduct : IProduct
 {
     public int Id { get; set; }
-    public string Name { get; set; }
+    public string? Name { get; set; }
     public decimal Price { get; set; }
     public Category Category => Category.Electronics;
     public int WarrantyMonths { get; set; }
-    public string Brand { get; set; }
+    public string? Brand { get; set; }
 }
 
 // 3. Create a discounted product wrapper
