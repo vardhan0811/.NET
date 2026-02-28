@@ -1,0 +1,81 @@
+﻿@model FlightSearchEngine.Models.SearchViewModel
+
+@{
+    ViewData["Title"] = "Flight Search";
+}
+
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h3 class="text-center mb-4">Flight Search Engine</h3>
+
+        <form method="post">
+            @Html.AntiForgeryToken()
+
+            <!-- Validation Summary -->
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+            <div class="row mb-3">
+                <!-- Source -->
+                <div class="col-md-6">
+                    <label class="form-label">Source</label>
+                    <select asp-for="Source"
+                            asp-items="Model.SourceList"
+                            class="form-select">
+                        <option value="">-- Select Source --</option>
+                    </select>
+                </div>
+
+                <!-- Destination -->
+                <div class="col-md-6">
+                    <label class="form-label">Destination</label>
+                    <select asp-for="Destination"
+                            asp-items="Model.DestinationList"
+                            class="form-select">
+                        <option value="">-- Select Destination --</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Number of Persons -->
+            <div class="mb-3">
+                <label class="form-label">Number of Persons</label>
+                <input asp-for="NumberOfPersons"
+                       type="number"
+                       min="1"
+                       max="10"
+                       class="form-control" />
+            </div>
+
+            <!-- Buttons -->
+            <div class="text-center">
+                <button type="submit"
+                        asp-action="SearchFlights"
+                        class="btn btn-success me-2">
+                    Search Flights Only
+                </button>
+
+                <button type="submit"
+                        asp-action="SearchFlightsWithHotels"
+                        class="btn btn-warning">
+                    Search Flight + Hotel
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function (e) {
+            const source = document.querySelector('[name="Source"]').value;
+            const destination = document.querySelector('[name="Destination"]').value;
+
+            if (source && destination && source === destination) {
+                alert("Source and Destination cannot be the same.");
+                e.preventDefault();
+            }
+        });
+    </script>
+}
