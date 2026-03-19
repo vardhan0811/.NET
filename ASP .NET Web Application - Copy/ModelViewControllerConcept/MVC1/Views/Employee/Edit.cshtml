@@ -1,0 +1,36 @@
+﻿@model Employee
+
+<h2>Edit Employee</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-2">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="mb-2">
+        <label>Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+    <div class="mb-2">
+        <label>Salary</label>
+        <input asp-for="Salary" class="form-control" />
+    </div>
+
+    <div class="mb-2">
+        <label>Department</label>
+        <select asp-for="DepartmentId"
+                asp-items="ViewBag.DepartmentList"
+                class="form-control">
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">
+        Update
+    </button>
+
+</form>

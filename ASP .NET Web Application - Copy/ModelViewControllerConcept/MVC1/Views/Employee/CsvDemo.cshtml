@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "CSV Demo";
+}
+
+<h2>Comma Separated Values Demo</h2>
+
+<form asp-action="CsvDemo" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="mb-3">
+        <label>Enter values (comma separated):</label>
+        <input type="text" name="inputValues" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Submit
+    </button>
+</form>
+
+@if (ViewData["ComplexResult"] != null)
+{
+    var data = ViewData["ComplexResult"]
+        as Dictionary<string, List<Dictionary<string, string>>>;
+
+    <h4 class="mt-3">Output:</h4>
+
+    @foreach (var key in data.Keys)
+    {
+        <h5>@key</h5>
+
+        <ul>
+            @foreach (var item in data[key])
+            {
+                <li>
+                    Name: @item["Name"] |
+                    Length: @item["Length"]
+                </li>
+            }
+        </ul>
+    }
+}

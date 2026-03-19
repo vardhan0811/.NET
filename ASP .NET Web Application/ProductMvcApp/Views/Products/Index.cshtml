@@ -1,0 +1,28 @@
+﻿@model List<ProductMvcApp.Models.Product>
+
+<h2>Products</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@product.Thumbnail" width="80" />
+                </td>
+                <td>@product.Title</td>
+                <td>$@product.Price</td>
+                <td>@product.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>

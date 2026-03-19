@@ -1,0 +1,46 @@
+﻿@model StudentPortalDb.ViewModels.DashboardViewModel
+<div>
+    <h2>Combined ViewModel Dashboard</h2>
+    <h3>Students</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var s in Model.Students)
+            {
+                <tr>
+                    <td>@s.FullName</td>
+                    <td>@s.MaskedEmail</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h3>Courses</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model.Courses)
+            {
+                <tr> <td>@c.Title</td> <td>@c.Fee</td> </tr>
+            }
+        </tbody>
+    </table>
+    <h3>Enrollments</h3> <table class="table">
+        <thead> <tr> <th>StudentId</th> <th>CourseId</th> </tr> </thead>
+        <tbody>
+            @foreach (var e in Model.Enrollments)
+            {
+                <tr> <td>@e.StudentId</td> <td>@e.CourseId</td> </tr>
+            }
+        </tbody>
+    </table>
+</div>

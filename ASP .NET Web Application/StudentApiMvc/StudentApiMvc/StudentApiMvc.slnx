@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../../../../../../Downloads/StudentPortal.Api-v2/StudentPortal.Api-v2/StudentPortal.Api.csproj" />
+  <Project Path="../../../../../../Downloads/StudentPortalSolution_WebApi-master/StudentPortalSolution_WebApi-master/StudentPortal.Mvc.csproj" />
+</Solution>

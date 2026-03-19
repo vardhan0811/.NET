@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="ApiGateway/ApiGateway.csproj" />
+  <Project Path="CartWebApi/CartWebApi.csproj" />
+  <Project Path="CatalogWebApi/CatalogWebApi.csproj" />
+  <Project Path="NotificationWebApi/NotificationWebApi.csproj" />
+  <Project Path="PaymentWebApi/PaymentWebApi.csproj" />
+</Solution>

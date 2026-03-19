@@ -1,0 +1,83 @@
+﻿@model StudentPortalDb.ViewModels.DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container mt-4">
+
+    <h2 class="text-center mb-4">Student Portal Dashboard</h2>
+
+    <div class="row">
+
+        <!-- Students Card -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Students</h4>
+                    <p class="card-text">
+                        Manage student records, status, and details.
+                    </p>
+                    <a asp-controller="Students"
+                       asp-action="Index"
+                       class="btn btn-primary">
+                        Go to Students
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Courses Card -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Courses</h4>
+                    <p class="card-text">
+                        View and manage available courses.
+                    </p>
+                    <a asp-controller="Courses"
+                       asp-action="Index"
+                       class="btn btn-success">
+                        Go to Courses
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enrollments Card -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Enrollments</h4>
+                    <p class="card-text">
+                        Manage student enrollments and payments.
+                    </p>
+                    <a asp-controller="Enrollments"
+                       asp-action="Index"
+                       class="btn btn-warning">
+                        Go to Enrollments
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- ViewModel Dashboard Card -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h4 class="card-title">ViewModel</h4>
+
+                    <p class="card-text">
+                        View combined Students, Courses and Enrollments.
+                    </p>
+
+                    <a asp-controller="Dashboard"
+                       asp-action="ViewModelDashboard"
+                       class="btn btn-dark">
+                        View All Records
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

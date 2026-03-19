@@ -1,0 +1,20 @@
+﻿@model Department
+
+<h2>Edit Department</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-2">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Update
+    </button>
+
+</form>
+
+<a asp-action="Index">Back to List</a>

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="StudentPortal.API/StudentPortal.API.csproj" />
+  <Project Path="StudentPortal.MVC/StudentPortal.MVC.csproj" />
+</Solution>

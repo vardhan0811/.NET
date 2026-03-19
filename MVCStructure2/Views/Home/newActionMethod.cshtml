@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Calculator";
+}
+
+<h1>Hello!👋 User</h1>
+<p> Let's do some calculation today'</p>
+
+
+<form method="post">
+    <div>
+        <label>Enter A:</label>
+        <input type="number" name="a" required />
+    </div>
+
+    <div>
+        <label>Enter B:</label>
+        <input type="number" name="b" required />
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-success">Calculate</button>
+</form>
+
+@if (ViewBag.Result != null)
+{
+    <hr />
+    <h3>Result:</h3>
+    <p>@ViewBag.A / @ViewBag.B = <strong>@ViewBag.Result</strong></p>
+}

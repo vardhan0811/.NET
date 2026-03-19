@@ -1,0 +1,18 @@
+﻿@model Department
+
+<h2>Create Department</h2>
+
+<form asp-action="Create" method="post">
+
+    <div class="mb-2">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Save
+    </button>
+
+</form>
+
+<a asp-action="Index">Back to List</a>

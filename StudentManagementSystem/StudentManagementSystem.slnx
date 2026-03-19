@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="StudentApi/StudentApi.csproj" Id="dc5232a6-3621-4680-a208-3b2d97dfd0ca" />
+  <Project Path="StudentMvc/StudentMvc.csproj" Id="5a45c228-e990-4c50-86c4-80fc6961a4f4" />
+</Solution>

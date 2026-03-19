@@ -1,0 +1,25 @@
+﻿@model Employee
+
+<form asp-action="Create" method="post">
+
+    <label>Name</label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name"></span>
+
+    <label>Email</label>
+    <input asp-for="Email" class="form-control" />
+
+    <label>Salary</label>
+    <input asp-for="Salary" class="form-control" />
+
+    <label>Department</label>
+    <select asp-for="DepartmentId"
+            asp-items="ViewBag.DepartmentList"
+            class="form-control">
+        <option value="">-- Select Department --</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary mt-2">
+        Save
+    </button>
+</form>

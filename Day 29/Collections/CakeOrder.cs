@@ -49,7 +49,7 @@ namespace Day29
 
     public class CakeOrderUI
     {
-        public static void Run()
+        public static void Main()
         {
             CakeOrder cakeOrder = new CakeOrder();
 

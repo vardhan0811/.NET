@@ -10,6 +10,8 @@
 	  <StartupObject>UniversitySystem</StartupObject>
   </PropertyGroup>
 	<ItemGroup>
+		<Compile Include="FinanceSystem.cs" />
+		<Compile Include="HospitalSystem.cs" />
 		<Compile Include="UniversitySystem.cs" />
 		<Compile Include="InventorySystem.cs" />
 	</ItemGroup>

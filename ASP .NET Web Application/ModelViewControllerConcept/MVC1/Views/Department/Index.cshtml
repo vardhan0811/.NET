@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Department>
+@using MVC1.Data
+
+<h2>Departments</h2>
+
+<a asp-action="Create" class="btn btn-success mb-2">
+    Add Department
+</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Employees Count</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dept in Model)
+        {
+            var empCount = FakeDatabase.Employees
+            .Count(e => e.DepartmentId == dept.Id && e.IsActive);
+
+            <tr>
+                <td>@dept.Name</td>
+                <td>@empCount</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@dept.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@dept.Id"
+                       onclick="return confirm('Are you sure?')">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

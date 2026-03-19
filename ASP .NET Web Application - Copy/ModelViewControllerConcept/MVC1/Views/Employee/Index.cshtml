@@ -1,0 +1,98 @@
+﻿@using MVC1.Data
+@model List<Employee>
+
+<h2>Employees</h2>
+
+<a asp-action="Create" class="btn btn-success mb-3">
+    Add Employee
+</a>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+<!-- 🔎 SEARCH + FILTER -->
+<form method="get" class="mb-3">
+
+    <input type="text"
+           name="search"
+           value="@Context.Request.Query["search"]"
+           placeholder="Search by name"
+           class="form-control mb-2" />
+
+    <select name="departmentId" class="form-control mb-2">
+        <option value="">All Departments</option>
+
+        @foreach (var dept in ViewBag.Departments)
+        {
+            var selected = Context.Request.Query["departmentId"] == dept.Id.ToString()
+                           ? "selected" : "";
+
+            <option value="@dept.Id"
+                    selected="@(Context.Request.Query["departmentId"] == dept.Id.ToString())">
+                @dept.Name
+            </option>
+        }
+    </select>
+
+    <button type="submit" class="btn btn-primary">
+        Search
+    </button>
+
+</form>
+
+<!-- 📋 EMPLOYEE TABLE -->
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>Department</th>
+            <th width="150">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+@if (Model != null && Model.Any())
+{
+    foreach (var emp in Model)
+    {
+        var dept = FakeDatabase.Departments
+            .FirstOrDefault(d => d.Id == emp.DepartmentId);
+
+        <tr>
+            <td>@emp.Name</td>
+            <td>@emp.Email</td>
+            <td>@emp.Salary</td>
+            <td>@dept?.Name</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@emp.Id">Details</a> |
+                <a asp-action="Edit" asp-route-id="@emp.Id">Edit</a> |
+                <form asp-action="Delete" method="post" style="display:inline;">
+                     <input type="hidden" name="id" value="@emp.Id" />
+                     @Html.AntiForgeryToken()
+                     <button type="submit"
+                             class="btn btn-link"
+                             onclick="return confirm('Are you sure?')">
+                         Delete
+                     </button>
+                </form>
+            </td>
+        </tr>
+    }
+}
+else
+{
+    <tr>
+        <td colspan="5" class="text-center">
+            No employees found.
+        </td>
+    </tr>
+}
+
+    </tbody>
+</table>

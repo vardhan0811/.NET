@@ -1,0 +1,25 @@
+--> ConnectionString <--
+
+"Server=.\SQLEXPRESS;Database=TrainingDB;Trusted_Connection=True;TrustServerCertificate=True;"
+
+
+
+--> PowerShell One-Line Command <--
+
+dotnet ef dbcontext scaffold "Server=.\SQLEXPRESS;Database=CursorConcept;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer --context AppDbContext --output-dir Models --context-dir Data --use-database-names --no-pluralize 
+
+dotnet ef dbcontext scaffold "Server=.\SQLEXPRESS;Database=StudentPortalDb;Trusted_Connection=True;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -o Models -c StudentPortalDbContext -f
+
+--> Add these lines in Program.cs <--
+
+using ScaffoldingMVC.Data;
+using Microsoft.EntityFrameworkCore;
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+--> Add these lines in appsettings.json <--
+
+"ConnectionStrings": {
+   "DefaultConnection": "Server=.\SQLEXPRESS;Database=TrainingDB;Trusted_Connection=True;TrustServerCertificate=True;"
+}
